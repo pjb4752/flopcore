@@ -1,0 +1,15 @@
+local Common = require('flopcore.core.common')
+
+describe('string conversions', function()
+  describe('when the value is a number', function()
+    it('should return the string value', function()
+      assert.are.equals('100', Common.num_to_str(100))
+    end)
+  end)
+
+  describe('when the value is a boolean', function()
+    it('should return the string value', function()
+      assert.are.equals('true', Common.bool_to_str(true))
+    end)
+  end)
+end)

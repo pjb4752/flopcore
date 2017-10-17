@@ -1,0 +1,73 @@
+local List = require('flopcore.core.list')
+
+describe('A List', function()
+  local list = nil
+  local empty_list = nil
+
+  before_each(function()
+    list = List.new(1, 2, 3)
+    empty_list = List.new()
+  end)
+
+  describe('testing emptiness of the list', function()
+    describe('when the list is empty', function()
+      it('should return true', function()
+        assert.is_true(empty_list:is_empty())
+      end)
+    end)
+
+    describe('when the list is not empty', function()
+      it('should return false', function()
+        assert.is_false(list:is_empty())
+      end)
+    end)
+  end)
+
+  describe('getting the head of a list', function()
+    describe('when the list is empty', function()
+      it('should return nil', function()
+        assert.is_nil(empty_list:head())
+      end)
+    end)
+
+    describe('when the list is not empty', function()
+      it('should return the first value', function()
+        assert.are.equals(1, list:head())
+      end)
+    end)
+  end)
+
+  describe('getting the tail of a list', function()
+    describe('when the list is empty', function()
+      it('should cause an error', function()
+        assert.has_error(function() empty_list:tail() end)
+      end)
+    end)
+
+    describe('when the list is not empty', function()
+      it('should return the proper list', function()
+        assert.are.same(List.new(2, 3), list:tail())
+      end)
+    end)
+  end)
+
+  describe('converting the list to a string value', function()
+    describe('when the list is empty', function()
+      it('should return the correct string', function()
+        assert.are.equals('List()', empty_list:to_s())
+      end)
+    end)
+
+    describe('when the list is not empty', function()
+      it('should return the correct string', function()
+        assert.are.equals('List(1, 2, 3)', list:to_s())
+      end)
+    end)
+
+    describe('when lists are nested', function()
+      it('should return the correct string', function()
+        assert.are.equals('List(1, List(1, 2, 3))', List.new(1, list):to_s())
+      end)
+    end)
+  end)
+end)
