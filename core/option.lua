@@ -1,20 +1,20 @@
 local Option = {}
 
-local construct = function(self)
-  return setmetatable(self, { __index = Option })
+local construct = function(option)
+  return setmetatable(option, { __type = 'Option' })
 end
 
 Option.new = function(wrapped)
-  local self = { wrapped = wrapped}
-  return construct(self)
+  local option = { wrapped = wrapped}
+  return construct(option)
 end
 
-Option.is_empty = function(self)
-  return self.wrapped == nil
+Option.is_empty = function(option)
+  return option.wrapped == nil
 end
 
-Option.get = function(self)
-  return self.wrapped
+Option.get = function(option)
+  return option.wrapped
 end
 
 return Option

@@ -1,4 +1,4 @@
-local Common = require('flopcore.core.common')
+local Common = require('core.common')
 
 describe('string conversions', function()
   describe('when the value is a number', function()

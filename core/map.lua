@@ -1,31 +1,31 @@
 local Map = {}
 
-local construct = function(self)
-  return setmetatable(self, { __index = Map })
+local construct = function(map)
+  return setmetatable(map, { __type = 'Map' })
 end
 
 Map.new = function(...)
-  local self = {}
+  local map = {}
   local key = nil
   for i, v in ipairs(arg) do
     if i % 2 ~= 0 then
       key = v
     else
-      self[key] = v
+      map[key] = v
     end
   end
-  return construct(self)
+  return construct(map)
 end
 
-Map.is_empty = function(self)
-  return next(self) == nil
+Map.is_empty = function(map)
+  return next(map) == nil
 end
 
-Map.get = function(self, key)
-  if (self[key] == nil) then
+Map.get = function(map, key)
+  if (map[key] == nil) then
     error('key does not exist')
   end
-  return self[key]
+  return map[key]
 end
 
 return Map

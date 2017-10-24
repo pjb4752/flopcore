@@ -20,7 +20,7 @@ build = {
   modules = {
     ["flopcore.core.common"] = "flopcore/core/common.lua",
     ["flopcore.core.list"] = "flopcore/core/list.lua",
-    ["flopcore.core.map"] = "flopcore/core/option.lua",
+    ["flopcore.core.map"] = "flopcore/core/map.lua",
     ["flopcore.core.option"] = "flopcore/core/option.lua",
   }
 }
