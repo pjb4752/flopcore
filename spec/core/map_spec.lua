@@ -2,17 +2,17 @@ local Map = require('core.map')
 
 describe('A Map', function()
   local map = nil
-  local empty_map = nil
+  local empty = nil
 
   before_each(function()
     map = Map.new('key1', 'value1', 'key2', 'value2')
-    empty_map = Map.new()
+    empty = Map.new()
   end)
 
   describe('testing emptiness of the map', function()
     describe('when the map is empty', function()
       it('should return true', function()
-        assert.is_true(Map.is_empty(empty_map))
+        assert.is_true(Map.is_empty(empty))
       end)
     end)
 
@@ -32,7 +32,7 @@ describe('A Map', function()
 
     describe('when the key does not exist', function()
       it('should cause an error', function()
-        assert.has_error(function() Map.get(empty_map, 'key1') end)
+        assert.has_error(function() Map.get(empty, 'key1') end)
       end)
     end)
   end)

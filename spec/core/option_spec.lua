@@ -2,17 +2,17 @@ local Option = require('core.option')
 
 describe('An Optional value', function()
   local option = nil
-  local empty_option = nil
+  local empty = nil
 
   before_each(function()
     option = Option.new('wrapped')
-    empty_option = Option.new(nil)
+    empty = Option.new(nil)
   end)
 
   describe('testing emptiness of the option', function()
     describe('when the optional value is empty', function()
       it('should return true', function()
-        assert.is_true(Option.is_empty(empty_option))
+        assert.is_true(Option.is_empty(empty))
       end)
     end)
 
@@ -26,7 +26,7 @@ describe('An Optional value', function()
   describe('getting the option value', function()
     describe('when the optional value is empty', function()
       it('should return nil', function()
-        assert.is_nil(Option.get(empty_option))
+        assert.is_nil(Option.get(empty))
       end)
     end)
 
