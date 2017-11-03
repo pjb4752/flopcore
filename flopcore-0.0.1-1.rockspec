@@ -22,7 +22,7 @@ build = {
     ["flopcore.core.list"] = "flopcore/core/list.lua",
     ["flopcore.core.map"] = "flopcore/core/map.lua",
     ["flopcore.core.option"] = "flopcore/core/option.lua",
-    ["flopcore.core.tuple"] = "flopcore/core/tuple.lua",
+    ["flopcore.core.pair"] = "flopcore/core/pair.lua",
     ["flopcore.core.vector"] = "flopcore/core/vector.lua",
   }
 }
