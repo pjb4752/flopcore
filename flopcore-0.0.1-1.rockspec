@@ -18,11 +18,11 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["flopcore.core.common"] = "flopcore/core/common.lua",
-    ["flopcore.core.list"] = "flopcore/core/list.lua",
-    ["flopcore.core.map"] = "flopcore/core/map.lua",
-    ["flopcore.core.option"] = "flopcore/core/option.lua",
-    ["flopcore.core.pair"] = "flopcore/core/pair.lua",
-    ["flopcore.core.vector"] = "flopcore/core/vector.lua",
+    ["flopcore.core.common"] = "core/common.lua",
+    ["flopcore.core.list"] = "core/list.lua",
+    ["flopcore.core.map"] = "core/map.lua",
+    ["flopcore.core.option"] = "core/option.lua",
+    ["flopcore.core.pair"] = "core/pair.lua",
+    ["flopcore.core.vector"] = "core/vector.lua",
   }
 }
