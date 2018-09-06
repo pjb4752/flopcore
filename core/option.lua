@@ -5,7 +5,7 @@ local construct = function(option)
 end
 
 Option.new = function(wrapped)
-  local option = { wrapped = wrapped}
+  local option = { wrapped = wrapped }
   return construct(option)
 end
 
