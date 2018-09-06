@@ -7,15 +7,15 @@ end
 Common.num_to_str = Common.to_str
 Common.bool_to_str = Common.to_str
 
-Common.plus = function(l, r)
+Common.add = function(l, r)
   return l + r
 end
 
-Common.minus = function(l, r)
+Common.sub = function(l, r)
   return l - r
 end
 
-Common.mult = function(l, r)
+Common.mlt = function(l, r)
   return l * r
 end
 
